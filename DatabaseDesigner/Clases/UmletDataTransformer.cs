@@ -99,11 +99,6 @@ namespace DatabaseDesigner.Clases
 
         public static Column GetColumnFromUmletData(UmlColumn umlColumn)
         {
-            //if (umlColumn.IsPrimaryKey != null && (bool)umlColumn.IsPrimaryKey)
-            //{
-            //    return null;
-            //}
-
             var column = new Column
                 {
                     ColumnOrder = -1,

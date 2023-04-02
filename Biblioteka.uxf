@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>232</y>
+      <w>232</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:13&gt;&gt;
+Korisnik
+--
+Id: int &lt;&lt;PK&gt;&gt;
+TipKorisnikaId: int &lt;&lt;FK&gt;&gt;
+ImePrezime: varchar(128)
+JMBG: varchar(14)
+Email: varchar(128)
+KorisnickoIme: varchar(64)
+Sifra: varchar(256)
+Foto: varchar(256)
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>720</y>
+      <w>232</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:7&gt;&gt;
+GlobalnaVarijabla
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Varijabla: varchar(256)
+Vrijednost: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>176</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:5&gt;&gt;
+Kategorija
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>272</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:16&gt;&gt;
+KnjigaKategorija
+--
+KnjigaId: int &lt;&lt;FK&gt;&gt;
+KategorijaId: int &lt;&lt;FK&gt;&gt;
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>448</x>
+      <y>472</y>
+      <w>232</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:20&gt;&gt;
+Izdavanje
+--
+Id: int &lt;&lt;PK&gt;&gt;
+KnjigaId: int &lt;&lt;FK&gt;&gt;
+IzdaoKorisnikId: int &lt;&lt;FK&gt;&gt;
+PozajmioKorisnikId: int &lt;&lt;FK&gt;&gt;
+DatumIzdavanja: date
+DatumVracanja: date
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>368</y>
+      <w>232</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:15&gt;&gt;
+Knjiga
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naslov: varchar(256)
+BrojStrana: int
+PismoId: int &lt;&lt;FK&gt;&gt;
+Jezik: int &lt;&lt;FK&gt;&gt;
+Povez: int &lt;&lt;FK&gt;&gt;
+Format: int &lt;&lt;FK&gt;&gt;
+Izdavac: int &lt;&lt;FK&gt;&gt;
+DatumIzdavanja: date
+ISBN: varchar(20)
+UkupnoPrimjeraka: int
+IzdatoPrimjeraka: int
+RezervisanoPrimjeraka: int
+Sadrzaj: varchar(4128)
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>328</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>232</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>96</y>
+      <w>232</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:8&gt;&gt;
+Autor
+--
+Id: int &lt;&lt;PK&gt;&gt;
+ImePrezime: varchar(128)
+Biografija: varchar(4128)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>216</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:17&gt;&gt;
+KnjigaAutor
+--
+KnjigaId: int &lt;&lt;FK&gt;&gt;
+AutorId: int &lt;&lt;FK&gt;&gt;
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1112</x>
+      <y>176</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>224</y>
+      <w>72</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;200.0;40.0;200.0;40.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>288</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:9&gt;&gt;
+Zanr
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>384</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:18&gt;&gt;
+KnjigaZanr
+--
+KnjigaId: int &lt;&lt;FK&gt;&gt;
+AutorId: int &lt;&lt;FK&gt;&gt;
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>392</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1112</x>
+      <y>344</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>456</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:10&gt;&gt;
+Pismo
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>464</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>528</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:11&gt;&gt;
+Jezik
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>528</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1008</x>
+      <y>600</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:12&gt;&gt;
+Povez
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>952</x>
+      <y>568</y>
+      <w>72</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>70.0;60.0;40.0;60.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>624</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:6&gt;&gt;
+Format
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>584</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>448</x>
+      <y>600</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:4&gt;&gt;
+Izdavac
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>568</y>
+      <w>72</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;60.0;40.0;60.0;40.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>168</x>
+      <y>680</y>
+      <w>512</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Tabela "IzdavanjeStatus" sadrži sve promjene 
+statusa knjige unutar jednog izdavanja
+Trenutni status je uvijek onaj sa najvišim datumom
+Statusi se mijenjaju:
+
+1. Akcijom "Izdaj knjigu" 
+Status: "Izdata"
+
+2. Akcijom "Vrati knjigu"
+Status: "Vraćena" ako je datum vraćanja unutar roka pozajmljivanja
+Status: "Vraćena sa zadrškom" ako je datum vraćanja van roka pozajmljivanja
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>480</y>
+      <w>232</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:21&gt;&gt;
+IzdavanjeStatus
+--
+Id: int &lt;&lt;PK&gt;&gt;
+IzdavanjeId: int &lt;&lt;FK&gt;&gt;
+StatusKnjigeId: int &lt;&lt;FK&gt;&gt;
+Datum: date
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>544</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>600</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:2&gt;&gt;
+StatusKnige
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>560</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>408</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:1&gt;&gt;
+TipKorisnika
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>368</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>360</y>
+      <w>72</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0;30.0;180.0;70.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>344</y>
+      <w>72</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;180.0;70.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1008</x>
+      <y>680</y>
+      <w>232</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Tabela "GlobalnaVarijabla" sadrži sve 
+varijable koje se mogu podesiti od
+strane korisnika a koje su bitne 
+za pravilno funkcionisanje aplikacije
+
+Primjer:
+Varijabla: 'ROK_POZAJMLJIVANJA'
+Vrijednost: '30'
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>448</x>
+      <y>112</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>Polje "Foto" sadrži
+path u file sistemu
+koji predstavlja datu 
+fotografiju
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>728</x>
+      <y>72</y>
+      <w>232</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:22&gt;&gt;
+Galerija
+--
+Id: int &lt;&lt;PK&gt;&gt;
+KnjigaId: int &lt;&lt;FK&gt;&gt;
+Foto: varchar(256)
+Naslovna: bit
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>696</x>
+      <y>136</y>
+      <w>48</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>40.0;310.0;10.0;310.0;10.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>120</y>
+      <w>232</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:14&gt;&gt;
+KorisnikLogin
+--
+Id: int &lt;&lt;PK&gt;&gt;
+KorisnikId: int &lt;&lt;FK&gt;&gt;
+Vrijeme: datetime
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>272</x>
+      <y>192</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>480</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>448</x>
+      <y>304</y>
+      <w>232</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:19&gt;&gt;
+Rezervacija
+--
+Id: int &lt;&lt;PK&gt;&gt;
+KnjigaId: int &lt;&lt;FK&gt;&gt;
+ZaKorisnikId: int &lt;&lt;FK&gt;&gt;
+RezervisaoKorisnikId: int &lt;&lt;FK&gt;&gt;
+DatumRezervacije: date
+DatumZatvaranja: date
+RazlogZatvaranja: int &lt;&lt;FK&gt;&gt;
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>448</x>
+      <y>208</y>
+      <w>232</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Table:3&gt;&gt;
+RazlogZatvaranjaRezervacije
+--
+Id: int &lt;&lt;PK&gt;&gt;
+Naziv: varchar(256)
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>552</x>
+      <y>264</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>304</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>320</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+</diagram>

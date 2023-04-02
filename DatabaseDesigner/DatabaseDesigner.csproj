@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F65C33FC-1200-4276-9463-6461C931E661}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DatabaseDesigner</RootNamespace>
+    <AssemblyName>DatabaseDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DD.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xControls">
+      <HintPath>..\..\TaskPlanner\TaskPlanner\xControls.dll</HintPath>
+    </Reference>
+    <Reference Include="XControlsNT">
+      <HintPath>..\..\xControlsNT\xControlsNT\bin\Release\XControlsNT.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\AppStatus.cs" />
+    <Compile Include="Clases\MsSqlScript.cs" />
+    <Compile Include="Clases\MsSqlTemplate.cs" />
+    <Compile Include="Clases\PostgreSqlScript.cs" />
+    <Compile Include="Clases\PostgreSqlTemplate.cs" />
+    <Compile Include="Clases\ScriptGenerator.cs" />
+    <Compile Include="Clases\Scripts.cs" />
+    <Compile Include="Clases\ScriptTemplate.cs" />
+    <Compile Include="Clases\UmletDataTransformer.cs" />
+    <Compile Include="Clases\UmletDataValidator.cs" />
+    <Compile Include="Clases\UmletXmlParser.cs" />
+    <Compile Include="Clases\Util.cs" />
+    <Compile Include="Entities\Column.cs" />
+    <Compile Include="Entities\DataModel.cs" />
+    <Compile Include="Entities\Index.cs" />
+    <Compile Include="Entities\IndexField.cs" />
+    <Compile Include="Entities\Schema.cs" />
+    <Compile Include="Entities\Table.cs" />
+    <Compile Include="Entities\UmlColumn.cs" />
+    <Compile Include="Entities\UmlDataModel.cs" />
+    <Compile Include="Entities\UmlIndex.cs" />
+    <Compile Include="Entities\UmlTable.cs" />
+    <Compile Include="Forms\FormScriptParams.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormScriptParams.Designer.cs">
+      <DependentUpon>FormScriptParams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddColumn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddColumn.Designer.cs">
+      <DependentUpon>FormAddColumn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddDataModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddDataModel.Designer.cs">
+      <DependentUpon>FormAddDataModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddIndex.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddIndex.Designer.cs">
+      <DependentUpon>FormAddIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddSchema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddSchema.Designer.cs">
+      <DependentUpon>FormAddSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormAddTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormAddTable.Designer.cs">
+      <DependentUpon>FormAddTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLoadUml.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLoadUml.Designer.cs">
+      <DependentUpon>FormLoadUml.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormShowRawUmlData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormShowRawUmlData.Designer.cs">
+      <DependentUpon>FormShowRawUmlData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormStringEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormStringEdit.Designer.cs">
+      <DependentUpon>FormStringEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\FrameColumns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\FrameColumns.Designer.cs">
+      <DependentUpon>FrameColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\FrameDbObjects.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\FrameDbObjects.Designer.cs">
+      <DependentUpon>FrameDbObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\FrameIndexes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Frames\FrameIndexes.Designer.cs">
+      <DependentUpon>FrameIndexes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FormAddColumn.resx">
+      <DependentUpon>FormAddColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddDataModel.resx">
+      <DependentUpon>FormAddDataModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddIndex.resx">
+      <DependentUpon>FormAddIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddSchema.resx">
+      <DependentUpon>FormAddSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormAddTable.resx">
+      <DependentUpon>FormAddTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLoadUml.resx">
+      <DependentUpon>FormLoadUml.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormScriptParams.resx">
+      <DependentUpon>FormScriptParams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormShowRawUmlData.resx">
+      <DependentUpon>FormShowRawUmlData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormStringEdit.resx">
+      <DependentUpon>FormStringEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\FrameColumns.resx">
+      <DependentUpon>FrameColumns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\FrameDbObjects.resx">
+      <DependentUpon>FrameDbObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frames\FrameIndexes.resx">
+      <DependentUpon>FrameIndexes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\DataSources\DatabaseDesigner.Entities.Schema.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DD.ico" />
+    <None Include="Resources\account-logout-2x.png" />
+    <None Include="Resources\account-login-2x.png" />
+    <None Include="Resources\arrow-thick-bottom-2x.png" />
+    <None Include="Resources\arrow-thick-top-2x.png" />
+    <None Include="Resources\ban-2x.png" />
+    <None Include="Resources\plus-2x.png" />
+    <None Include="Resources\pencil-2x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

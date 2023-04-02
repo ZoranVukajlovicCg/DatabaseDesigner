@@ -75,9 +75,9 @@ namespace DatabaseDesigner.Clases
             string script = string.Empty;
 
             // header
-            file.WriteLine(Scripts.Line);
+            file.WriteLine(template.Line);
             file.WriteLine(@"--  {0:000}. {1}", table.Order, table.Name);
-            file.WriteLine(Scripts.Line);
+            file.WriteLine(template.Line);
 
             // select id columns
             var col = table.Columns.Where(x => (bool)x.IsPrimaryKey).ToArray();
@@ -158,7 +158,6 @@ namespace DatabaseDesigner.Clases
                 file.WriteLine(string.Empty);
                 file.WriteLine(string.Empty);
             }
-
         }
 
         private void ScriptIndex(StreamWriter file, Index index, string schema, string table, PostgreSqlTemplate template)
@@ -208,7 +207,6 @@ namespace DatabaseDesigner.Clases
                             .Replace("{isAccessControl}", table.IsAccessControlEnabled ? "true" : "false")
                             .Replace("{isDynamic}", "false");
                         file.Write(comm);
-                        //file.WriteLine(string.Empty);
                     }
                     file.Write(template.BeginIfTableExists);
                     foreach (var column in table.Columns.Where(x => !(bool)x.IsPrimaryKey).ToList())
@@ -237,7 +235,6 @@ namespace DatabaseDesigner.Clases
                         }
                     }
                     file.WriteLine("\t" + template.EndIf);
-                    //file.WriteLine(string.Empty);
                 }
                 file.WriteLine("\tEND;");
             }

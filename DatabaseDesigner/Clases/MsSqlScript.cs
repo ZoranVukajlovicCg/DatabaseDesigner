@@ -67,9 +67,9 @@ namespace DatabaseDesigner.Clases
             string script = string.Empty;
 
             // header
-            file.WriteLine(Scripts.Line);
+            file.WriteLine(template.Line);
             file.WriteLine(@"--  {0:000}. {1}", table.Order, table.Name);
-            file.WriteLine(Scripts.Line);
+            file.WriteLine(template.Line);
 
             // select id columns
             var col = table.Columns.Where(x => (bool)x.IsPrimaryKey).ToArray();
@@ -192,7 +192,6 @@ namespace DatabaseDesigner.Clases
                             .Replace("{isAccessControl}", Convert.ToInt16(table.IsAccessControlEnabled).ToString())
                             .Replace("{isDynamic}", "false");
                         file.Write(comm);
-                        //file.WriteLine(string.Empty);
                     }
                     file.Write(template.BeginIfTableExists);
                     foreach (var column in table.Columns.Where(x => !(bool)x.IsPrimaryKey).ToList())
@@ -221,7 +220,6 @@ namespace DatabaseDesigner.Clases
                         }
                     }
                     file.WriteLine(template.End);
-                    //file.WriteLine(string.Empty);
                 }
             }
             file.WriteLine(template.Go);

@@ -58,9 +58,6 @@
     <Compile Include="Clases\MsSqlTemplate.cs" />
     <Compile Include="Clases\PostgreSqlScript.cs" />
     <Compile Include="Clases\PostgreSqlTemplate.cs" />
-    <Compile Include="Clases\ScriptGenerator.cs" />
-    <Compile Include="Clases\Scripts.cs" />
-    <Compile Include="Clases\ScriptTemplate.cs" />
     <Compile Include="Clases\UmletDataTransformer.cs" />
     <Compile Include="Clases\UmletDataValidator.cs" />
     <Compile Include="Clases\UmletXmlParser.cs" />
